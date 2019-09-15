@@ -41,9 +41,9 @@ RUN cp -p /home/dynamodblocal/sqlite4java/build/dist/sqlite4java.jar /home/dynam
 # The entrypoint is the dynamodb jar. Default port is 8000.
 EXPOSE 8000
 
-# DynamoDB option arguments:
+# DynamoDB option arguments that can be added in to the following list:
 # -sharedDb = use the same database tables regardless of what region the client asks for.
 #             This is useful for testing, or for diagnosing problems with setting the region.
 # -inMemory = keep all data in memory. Do not write it to disk. Useful to speed up unit tests.
-ENTRYPOINT ["java", "-jar", "DynamoDBLocal.jar", "-sharedDb"]
+ENTRYPOINT ["java", "-jar", "DynamoDBLocal.jar"]
 
